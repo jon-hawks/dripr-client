@@ -1,0 +1,18 @@
+{
+    "image": "mcr.microsoft.com/devcontainers/javascript-node",
+    "name": "React Native",
+    "postAttachCommand": "printenv && npm install && npm start",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "dsznajder.es7-react-js-snippets",
+                "expo.vscode-expo-tools",
+                "msjsdiag.vscode-react-native",
+                "GitHub.vscode-github-actions"
+            ]
+        }
+    },
+    "containerEnv": {
+        "REACT_APP_BACKEND": "${localEnv:NGROK_BACKEND}"
+    }
+}

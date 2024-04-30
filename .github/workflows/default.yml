@@ -1,0 +1,95 @@
+################################################################################
+# This pipeline validates that the code builds, is linted properly, passes     #
+# unit tests, and passes a security audit.                                     #
+################################################################################
+name: default
+
+on:
+  push:
+
+# Environment variables.
+#env:
+#  PLACEHOLDER: ${{ secrets.PLACEHOLDER }}
+
+# Pipeline.
+jobs:
+
+  # Verification stage.
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+
+    # Checkout this repository. Note: this should likely always come first.
+    - name: Checkout Repository
+      uses: actions/checkout@main
+      with:
+        # Pull faster.
+        fetch-depth: 0
+
+    # Install.
+    - name: Install
+      run: |-
+        npm install
+
+    # Run tests.
+    - name: Test
+      run: |-
+        npm run test
+
+  # Build for Android.
+  deploy-android:
+    needs: verify
+    runs-on: ubuntu-latest
+    steps:
+
+    # Checkout this repository. Note: this should likely always come first.
+    - name: Checkout Repository
+      uses: actions/checkout@main
+      with:
+        # Pull faster.
+        fetch-depth: 0
+
+    # Install.
+    - name: Install
+      run: |-
+        npm install
+
+    # Build Android release.
+    - name: Build Android Release
+      run: |-
+        echo "PLACEHOLDER FOR ANDROID BUILD"
+
+#    # Build Android release.
+#    - name: Build Android Release
+#      run: |-
+#        cd android && ./gradlew assembleRelease
+#
+#    # Upload Android artifact.
+#    - name: Upload Artifact
+#      uses: actions/upload-artifact@v1
+#      with:
+#        name: app-release.apk
+#        path: android/app/build/outputs/apk/release/
+
+  # Build for iOS.
+  deploy-ios:
+    needs: verify
+    runs-on: macos-latest
+    steps:
+
+    # Checkout this repository. Note: this should likely always come first.
+    - name: Checkout Repository
+      uses: actions/checkout@main
+      with:
+        # Pull faster.
+        fetch-depth: 0
+
+    # Install.
+    - name: Install
+      run: |-
+        npm install
+
+    # Build iOS release.
+    - name: Build iOS Release
+      run: |-
+        echo "PLACEHOLDER FOR IOS BUILD"
