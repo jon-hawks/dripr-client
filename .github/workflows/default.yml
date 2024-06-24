@@ -7,10 +7,6 @@ name: default
 on:
   push:
 
-# Environment variables.
-#env:
-#  PLACEHOLDER: ${{ secrets.PLACEHOLDER }}
-
 # Pipeline.
 jobs:
 
@@ -89,7 +85,14 @@ jobs:
       run: |-
         npm install
 
-    # Build iOS release.
-    - name: Build iOS Release
-      run: |-
-        echo "PLACEHOLDER FOR IOS BUILD"
+    # Install EAS.
+    - name: Install EAS
+      uses: expo/expo-github-action@main
+      with:
+        eas-version: latest
+        packager: npm
+        token: ${{ secrets.EXPO_TOKEN }}
+
+    # Build.
+    - name: Build
+      run: eas update --auto --non-interactive

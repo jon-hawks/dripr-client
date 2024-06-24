@@ -1,0 +1,12 @@
+{
+    "recommendations": [
+        "dsznajder.es7-react-js-snippets",
+        "expo.vscode-expo-tools",
+        "GitHub.vscode-github-actions",
+        "ms-azuretools.vscode-docker",
+        "msjsdiag.vscode-react-native",
+        "richie5um2.vscode-sort-json",
+        "vuhrmeister.vscode-meteor",
+        "yy0931.gitconfig-lsp"
+    ]
+}

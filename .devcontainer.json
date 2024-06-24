@@ -1,18 +1,26 @@
 {
-    "image": "mcr.microsoft.com/devcontainers/javascript-node",
     "name": "React Native",
-    "postAttachCommand": "printenv && npm install && npm start",
+    "image": "mcr.microsoft.com/devcontainers/javascript-node",
+    "postAttachCommand": "npm install",
+    "containerEnv": {
+        "REACT_APP_BACKEND": "${localEnv:NGROK_DOMAIN}"
+    },
+    "forwardPorts": [4040, 8081],
     "customizations": {
         "vscode": {
             "extensions": [
                 "dsznajder.es7-react-js-snippets",
                 "expo.vscode-expo-tools",
+                "GitHub.vscode-github-actions",
+                "ms-azuretools.vscode-docker",
                 "msjsdiag.vscode-react-native",
-                "GitHub.vscode-github-actions"
-            ]
+                "richie5um2.vscode-sort-json",
+                "vuhrmeister.vscode-meteor",
+                "yy0931.gitconfig-lsp"
+            ],
+            "settings": {
+                "remote.autoForwardPorts": false
+            }
         }
-    },
-    "containerEnv": {
-        "REACT_APP_BACKEND": "${localEnv:NGROK_BACKEND}"
     }
 }

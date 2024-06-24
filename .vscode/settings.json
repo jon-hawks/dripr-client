@@ -1,0 +1,15 @@
+{
+    "editor.autoIndent": "full",
+    "editor.detectIndentation": false,
+    "editor.insertSpaces": true,
+    "editor.renderWhitespace": "all",
+    "editor.rulers": [80,120,160,200,240],
+    "editor.tabSize": 4,
+    "editor.wordWrap": "off",
+    "files.eol": "\n",
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
+    "[github-actions-workflow]": {
+        "editor.tabSize": 2
+    }
+}

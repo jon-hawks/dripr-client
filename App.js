@@ -3,55 +3,44 @@
 \-----------------------------------------------------------------------------*/
 
 // Imports.
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { NavigationContainer } from '@react-navigation/native';
+import { Text, View } from 'react-native';
+import Meteor from '@meteorrn/core';
 import React from 'react';
-import Meteor, { Mongo, withTracker } from '@meteorrn/core';
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-
-// Connect to Meteor backend.
-Meteor.connect(process.env.REACT_APP_BACKEND + "/websocket");
-
-// Connect to MongoDB collection.
-const Stocks = new Mongo.Collection("stocks");
+import HomeScreen from './modules/home/App';
+import SettingsScreen from './modules/settings/App';
 
 // TEMPORARY; debugging.
-//const Data = Meteor.getData();
-//Data.onChange(event => console.log(event));
+process.env.REACT_APP_BACKEND = 'special-careful-firefly.ngrok-free.app';
+console.log(process.env);
+
+// Connect to Meteor backend.
+Meteor.connect('https://' + process.env.REACT_APP_BACKEND + "/websocket", {suppressUrlErrors: true});
 
 // Main view.
-class App extends React.Component {
-  render() {
-    let { stocks } = this.props;
+export default App = () => {
 
+    // Configure view.
+    const Tab = createBottomTabNavigator();
+
+    // Send view to the screen.
     return (
-      <View>
-        <Text>Test:</Text>
-        {stocks.map(stock => (
-          <Text>{stock._id}</Text>
-        ))}
-      </View>
+        <NavigationContainer>
+            <Tab.Navigator>
+                <Tab.Screen name="Home" component={HomeScreen} />
+                <Tab.Screen name="Settings" component={SettingsScreen} />
+            </Tab.Navigator>
+        </NavigationContainer>
     );
-  }
 }
 
-// Main stylesheet.
-//const styles = StyleSheet.create({
-//  container: {
-//    flex: 1,
-//    backgroundColor: '#fff',
-//    alignItems: 'center',
-//    justifyContent: 'center',
-//  },
-//});
-
-// Main controller.
-let AppContainer = withTracker(() => {
-  Meteor.subscribe('stocks');
-  //let stocks = Stocks.findOne();
-  let stocks = Stocks.find().fetch();
-
-  return {
-    stocks,
-  };
-})(App);
-export default AppContainer;
+// // Main stylesheet.
+// const styles = StyleSheet.create({
+//     container: {
+//         flex: 1,
+//         backgroundColor: '#fff',
+//         alignItems: 'center',
+//         justifyContent: 'center',
+//     },
+// });
