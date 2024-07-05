@@ -3,7 +3,7 @@
     "image": "mcr.microsoft.com/devcontainers/javascript-node",
     "postAttachCommand": "npm install",
     "containerEnv": {
-        "REACT_APP_BACKEND": "${localEnv:NGROK_DOMAIN}"
+        "EXPO_PUBLIC_BACKEND": "${localEnv:NGROK_DOMAIN}"
     },
     "forwardPorts": [4040, 8081],
     "customizations": {

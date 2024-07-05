@@ -96,3 +96,5 @@ jobs:
     # Build.
     - name: Build
       run: eas update --auto --non-interactive
+      env:
+        PROJECT_ID: ${{ secrets.PROJECT_ID }}

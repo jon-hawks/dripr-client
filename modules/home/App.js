@@ -1,7 +1,7 @@
 /*-----------------------------------------------------------------------------\
 | Home screen.                                                                 |
 \-----------------------------------------------------------------------------*/
-//
+
 // Imports.
 import { Text, ScrollView } from 'react-native';
 import Meteor, { Mongo, withTracker } from '@meteorrn/core';
@@ -15,7 +15,6 @@ class HomeScreen extends React.Component {
     render(){
         return (
             <ScrollView>
-                <Text>Test:</Text>
                 {this.props.stocks.map(stock => (
                     <Text>{stock._id}</Text>
                 ))}
@@ -36,4 +35,5 @@ export default withTracker(() => {
     return {
         stocks: Stocks.find().fetch()
     };
+
 })(HomeScreen);

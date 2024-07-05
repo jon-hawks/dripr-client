@@ -14,6 +14,7 @@
 !/.vscode/extensions.json
 !/.vscode/settings.json
 !/.vscode/tasks.json
+!/app.config.js
 !/App.js
 !/assets
 !/assets/adaptive-icon.png
@@ -21,6 +22,7 @@
 !/assets/icon.png
 !/assets/splash.png
 !/babel.config.js
+!/eas.json
 !/modules
 !/modules/home
 !/modules/home/App.js

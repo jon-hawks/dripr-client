@@ -10,7 +10,7 @@ Notes:
 3. To inspect the ngrok tunnel, navigate to: http://localhost:4040/inspect/http
 
 ## Build Status
-[![Main](https://github.com/jon-hawks/dripr-client/workflows/default/badge.svg?branch=main)](https://github.com/jon-hawks/dripr-client/actions)
+[![Main](https://github.com/jon-hawks/dripr-client/actions/workflows/default.yml/badge.svg?branch=main)](https://github.com/jon-hawks/dripr-client/actions)
 
 ## Directory Structure
 Follows the guide at [reactnative.express](https://www.reactnative.express/app/project_structure#large-projects).

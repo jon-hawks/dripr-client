@@ -11,12 +11,8 @@ import React from 'react';
 import HomeScreen from './modules/home/App';
 import SettingsScreen from './modules/settings/App';
 
-// TEMPORARY; debugging.
-process.env.REACT_APP_BACKEND = 'special-careful-firefly.ngrok-free.app';
-console.log(process.env);
-
 // Connect to Meteor backend.
-Meteor.connect('https://' + process.env.REACT_APP_BACKEND + "/websocket", {suppressUrlErrors: true});
+Meteor.connect('https://' + process.env.EXPO_PUBLIC_BACKEND + '/websocket', {suppressUrlErrors: true});
 
 // Main view.
 export default App = () => {
