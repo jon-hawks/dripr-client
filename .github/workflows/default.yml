@@ -97,4 +97,5 @@ jobs:
     - name: Build
       run: eas update --auto --non-interactive
       env:
+        OWNER: ${{ secrets.OWNER }}
         PROJECT_ID: ${{ secrets.PROJECT_ID }}
