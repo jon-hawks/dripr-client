@@ -16,7 +16,7 @@ class HomeScreen extends React.Component {
         return (
             <ScrollView>
                 {this.props.stocks.map(stock => (
-                    <Text>{stock._id}</Text>
+                    <Text key={stock._id}>{stock._id}</Text>
                 ))}
             </ScrollView>
         );

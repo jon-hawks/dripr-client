@@ -7,14 +7,15 @@
     "test": ""
   },
   "dependencies": {
+    "@expo/vector-icons": "^14.0.2",
     "@meteorrn/core": "^2.8.1",
     "@react-navigation/bottom-tabs": "^6.5.20",
     "@react-navigation/native-stack": "^6.9.26",
     "expo": "^51.0.9",
     "expo-status-bar": "~1.11.1",
+    "expo-updates": "~0.25.18",
     "react": "18.2.0",
-    "react-native": "0.73.6",
-    "expo-updates": "~0.25.18"
+    "react-native": "0.73.6"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
