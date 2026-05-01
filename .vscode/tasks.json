@@ -2,9 +2,24 @@
     "tasks": [
         {
             "isBackground": true,
-            "label": "React Native",
+            "label": "npm",
             "linux": {
                 "command": "npm start"
+            },
+            "presentation": {
+                "panel": "new",
+                "reveal": "always"
+            },
+            "runOptions": {
+                "runOn": "folderOpen"
+            },
+            "type": "shell"
+        },
+        {
+            "isBackground": true,
+            "label": "zsh",
+            "linux": {
+                "command": "bash"
             },
             "presentation": {
                 "panel": "new",

@@ -1,13 +1,15 @@
 {
     "name": "React Native",
-    "image": "mcr.microsoft.com/devcontainers/javascript-node",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
     "postAttachCommand": "npm install",
     "containerEnv": {
         "EXPO_PUBLIC_BACKEND": "${localEnv:NGROK_DOMAIN}",
         "OWNER": "${localEnv:OWNER}",
         "PROJECT_ID": "${localEnv:PROJECT_ID}"
     },
-    "forwardPorts": [4040, 8081],
+//    "forwardPorts": [4040, 8081],
     "customizations": {
         "vscode": {
             "extensions": [
@@ -20,9 +22,9 @@
                 "vuhrmeister.vscode-meteor",
                 "yy0931.gitconfig-lsp"
             ],
-            "settings": {
-                "remote.autoForwardPorts": false
-            }
+//            "settings": {
+//                "remote.autoForwardPorts": false
+//            }
         }
     }
 }
